@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { CTAButton } from "./ui-kit";
@@ -71,8 +71,8 @@ export function Navbar() {
 
             <div className="flex items-center gap-2">
               <ThemeToggle />
-              <CTAButton to="/contact" variant="primary" className="hidden px-5 py-2.5 sm:inline-flex">
-                Book Free Growth Audit <ArrowUpRight className="h-4 w-4" />
+              <CTAButton to="/auth" variant="primary" className="hidden px-5 py-2.5 sm:inline-flex">
+                <User className="h-4 w-4" /> Client Portal
               </CTAButton>
               <button
                 type="button"
@@ -106,8 +106,8 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <CTAButton to="/contact" variant="primary" className="mt-2 w-full">
-              Book Free Growth Audit <ArrowUpRight className="h-4 w-4" />
+            <CTAButton to="/auth" variant="primary" className="mt-2 w-full">
+              <User className="h-4 w-4" /> Client Portal
             </CTAButton>
           </div>
         </motion.div>

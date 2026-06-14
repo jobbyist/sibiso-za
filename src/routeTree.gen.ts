@@ -9,18 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PodcastIndexRouteImport } from './routes/podcast.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as PodcastSlugRouteImport } from './routes/podcast.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AuthenticatedClientPortalRouteImport } from './routes/_authenticated/client-portal'
+import { Route as AuthenticatedAdminPanelRouteImport } from './routes/_authenticated/admin-panel'
+import { Route as AuthenticatedClientPortalOnboardingRouteImport } from './routes/_authenticated/client-portal.onboarding'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
@@ -36,6 +50,16 @@ const ProcessRoute = ProcessRouteImport.update({
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -46,9 +70,23 @@ const CaseStudiesRoute = CaseStudiesRouteImport.update({
   path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -76,97 +114,170 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedClientPortalRoute =
+  AuthenticatedClientPortalRouteImport.update({
+    id: '/client-portal',
+    path: '/client-portal',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminPanelRoute = AuthenticatedAdminPanelRouteImport.update({
+  id: '/admin-panel',
+  path: '/admin-panel',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedClientPortalOnboardingRoute =
+  AuthenticatedClientPortalOnboardingRouteImport.update({
+    id: '/onboarding',
+    path: '/onboarding',
+    getParentRoute: () => AuthenticatedClientPortalRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
+  '/admin-panel': typeof AuthenticatedAdminPanelRoute
+  '/client-portal': typeof AuthenticatedClientPortalRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/podcast/$slug': typeof PodcastSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/podcast/': typeof PodcastIndexRoute
+  '/client-portal/onboarding': typeof AuthenticatedClientPortalOnboardingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
+  '/admin-panel': typeof AuthenticatedAdminPanelRoute
+  '/client-portal': typeof AuthenticatedClientPortalRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/podcast/$slug': typeof PodcastSlugRoute
   '/blog': typeof BlogIndexRoute
   '/podcast': typeof PodcastIndexRoute
+  '/client-portal/onboarding': typeof AuthenticatedClientPortalOnboardingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/auth': typeof AuthRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/terms': typeof TermsRoute
+  '/_authenticated/admin-panel': typeof AuthenticatedAdminPanelRoute
+  '/_authenticated/client-portal': typeof AuthenticatedClientPortalRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/podcast/$slug': typeof PodcastSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/podcast/': typeof PodcastIndexRoute
+  '/_authenticated/client-portal/onboarding': typeof AuthenticatedClientPortalOnboardingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/auth'
     | '/case-studies'
     | '/contact'
+    | '/cookies'
+    | '/privacy'
     | '/process'
     | '/sitemap.xml'
     | '/solutions'
+    | '/terms'
+    | '/admin-panel'
+    | '/client-portal'
     | '/blog/$slug'
     | '/podcast/$slug'
     | '/blog/'
     | '/podcast/'
+    | '/client-portal/onboarding'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/auth'
     | '/case-studies'
     | '/contact'
+    | '/cookies'
+    | '/privacy'
     | '/process'
     | '/sitemap.xml'
     | '/solutions'
+    | '/terms'
+    | '/admin-panel'
+    | '/client-portal'
     | '/blog/$slug'
     | '/podcast/$slug'
     | '/blog'
     | '/podcast'
+    | '/client-portal/onboarding'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
+    | '/accessibility'
+    | '/auth'
     | '/case-studies'
     | '/contact'
+    | '/cookies'
+    | '/privacy'
     | '/process'
     | '/sitemap.xml'
     | '/solutions'
+    | '/terms'
+    | '/_authenticated/admin-panel'
+    | '/_authenticated/client-portal'
     | '/blog/$slug'
     | '/podcast/$slug'
     | '/blog/'
     | '/podcast/'
+    | '/_authenticated/client-portal/onboarding'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  AuthRoute: typeof AuthRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
+  TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   PodcastSlugRoute: typeof PodcastSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -175,6 +286,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
@@ -196,6 +314,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -210,11 +342,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -252,17 +405,72 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/client-portal': {
+      id: '/_authenticated/client-portal'
+      path: '/client-portal'
+      fullPath: '/client-portal'
+      preLoaderRoute: typeof AuthenticatedClientPortalRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin-panel': {
+      id: '/_authenticated/admin-panel'
+      path: '/admin-panel'
+      fullPath: '/admin-panel'
+      preLoaderRoute: typeof AuthenticatedAdminPanelRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/client-portal/onboarding': {
+      id: '/_authenticated/client-portal/onboarding'
+      path: '/onboarding'
+      fullPath: '/client-portal/onboarding'
+      preLoaderRoute: typeof AuthenticatedClientPortalOnboardingRouteImport
+      parentRoute: typeof AuthenticatedClientPortalRoute
+    }
   }
 }
 
+interface AuthenticatedClientPortalRouteChildren {
+  AuthenticatedClientPortalOnboardingRoute: typeof AuthenticatedClientPortalOnboardingRoute
+}
+
+const AuthenticatedClientPortalRouteChildren: AuthenticatedClientPortalRouteChildren =
+  {
+    AuthenticatedClientPortalOnboardingRoute:
+      AuthenticatedClientPortalOnboardingRoute,
+  }
+
+const AuthenticatedClientPortalRouteWithChildren =
+  AuthenticatedClientPortalRoute._addFileChildren(
+    AuthenticatedClientPortalRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminPanelRoute: typeof AuthenticatedAdminPanelRoute
+  AuthenticatedClientPortalRoute: typeof AuthenticatedClientPortalRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminPanelRoute: AuthenticatedAdminPanelRoute,
+  AuthenticatedClientPortalRoute: AuthenticatedClientPortalRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  AuthRoute: AuthRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
+  PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
+  TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   PodcastSlugRoute: PodcastSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
