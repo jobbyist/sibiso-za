@@ -83,6 +83,12 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
           <p>© {new Date().getFullYear()} Sibiso Marketing. All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link to="/terms" className="transition-colors hover:text-[var(--gold)]">Terms</Link>
+            <Link to="/privacy" className="transition-colors hover:text-[var(--gold)]">Privacy</Link>
+            <Link to="/cookies" className="transition-colors hover:text-[var(--gold)]">Cookies</Link>
+            <Link to="/accessibility" className="transition-colors hover:text-[var(--gold)]">Accessibility</Link>
+          </div>
           <p>Powered by Gravitas</p>
         </div>
       </div>
