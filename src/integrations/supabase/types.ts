@@ -14,16 +14,356 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      client_services: {
+        Row: {
+          ads: boolean
+          ai_automation: boolean
+          ai_chatbots: boolean
+          ai_voice: boolean
+          created_at: string
+          designs: boolean
+          domains: boolean
+          id: string
+          other: boolean
+          other_description: string | null
+          updated_at: string
+          user_id: string
+          websites: boolean
+        }
+        Insert: {
+          ads?: boolean
+          ai_automation?: boolean
+          ai_chatbots?: boolean
+          ai_voice?: boolean
+          created_at?: string
+          designs?: boolean
+          domains?: boolean
+          id?: string
+          other?: boolean
+          other_description?: string | null
+          updated_at?: string
+          user_id: string
+          websites?: boolean
+        }
+        Update: {
+          ads?: boolean
+          ai_automation?: boolean
+          ai_chatbots?: boolean
+          ai_voice?: boolean
+          created_at?: string
+          designs?: boolean
+          domains?: boolean
+          id?: string
+          other?: boolean
+          other_description?: string | null
+          updated_at?: string
+          user_id?: string
+          websites?: boolean
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          created_at: string
+          doc_type: string
+          id: string
+          storage_path: string
+          title: string
+          uploaded_by: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          doc_type: string
+          id?: string
+          storage_path: string
+          title: string
+          uploaded_by?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          doc_type?: string
+          id?: string
+          storage_path?: string
+          title?: string
+          uploaded_by?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      payment_history: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          description: string | null
+          id: string
+          invoice_number: string | null
+          paid_at: string | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          description?: string | null
+          id?: string
+          invoice_number?: string | null
+          paid_at?: string | null
+          status?: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          description?: string | null
+          id?: string
+          invoice_number?: string | null
+          paid_at?: string | null
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      payment_methods: {
+        Row: {
+          created_at: string
+          details: Json | null
+          id: string
+          is_default: boolean
+          label: string | null
+          method_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          details?: Json | null
+          id?: string
+          is_default?: boolean
+          label?: string | null
+          method_type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          details?: Json | null
+          id?: string
+          is_default?: boolean
+          label?: string | null
+          method_type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          account_manager_email: string | null
+          account_manager_name: string | null
+          account_manager_phone: string | null
+          address: string | null
+          approved: boolean
+          avatar_url: string | null
+          billing_method: string | null
+          company: string | null
+          contact_email: boolean
+          contact_phone: boolean
+          contact_whatsapp: boolean
+          created_at: string
+          email: string | null
+          first_name: string | null
+          id: string
+          last_name: string | null
+          newsletter_opt_in: boolean
+          onboarding_complete: boolean
+          phone: string | null
+          terms_accepted: boolean
+          updated_at: string
+        }
+        Insert: {
+          account_manager_email?: string | null
+          account_manager_name?: string | null
+          account_manager_phone?: string | null
+          address?: string | null
+          approved?: boolean
+          avatar_url?: string | null
+          billing_method?: string | null
+          company?: string | null
+          contact_email?: boolean
+          contact_phone?: boolean
+          contact_whatsapp?: boolean
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          newsletter_opt_in?: boolean
+          onboarding_complete?: boolean
+          phone?: string | null
+          terms_accepted?: boolean
+          updated_at?: string
+        }
+        Update: {
+          account_manager_email?: string | null
+          account_manager_name?: string | null
+          account_manager_phone?: string | null
+          address?: string | null
+          approved?: boolean
+          avatar_url?: string | null
+          billing_method?: string | null
+          company?: string | null
+          contact_email?: boolean
+          contact_phone?: boolean
+          contact_whatsapp?: boolean
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          newsletter_opt_in?: boolean
+          onboarding_complete?: boolean
+          phone?: string | null
+          terms_accepted?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      referrals: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          referred_company: string | null
+          referred_email: string | null
+          referred_name: string | null
+          referrer_id: string
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          referred_company?: string | null
+          referred_email?: string | null
+          referred_name?: string | null
+          referrer_id: string
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          referred_company?: string | null
+          referred_email?: string | null
+          referred_name?: string | null
+          referrer_id?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      support_tickets: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          priority: string
+          status: string
+          subject: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          priority?: string
+          status?: string
+          subject: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          priority?: string
+          status?: string
+          subject?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      ticket_messages: {
+        Row: {
+          author_id: string
+          created_at: string
+          id: string
+          message: string
+          ticket_id: string
+        }
+        Insert: {
+          author_id: string
+          created_at?: string
+          id?: string
+          message: string
+          ticket_id: string
+        }
+        Update: {
+          author_id?: string
+          created_at?: string
+          id?: string
+          message?: string
+          ticket_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ticket_messages_ticket_id_fkey"
+            columns: ["ticket_id"]
+            isOneToOne: false
+            referencedRelation: "support_tickets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +490,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "client"],
+    },
   },
 } as const
