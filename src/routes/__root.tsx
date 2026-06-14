@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -162,6 +163,7 @@ function RootComponent() {
         <Footer />
         <Chatbot />
         <Toaster />
+        <Analytics />
       </ThemeProvider>
     </QueryClientProvider>
   );
