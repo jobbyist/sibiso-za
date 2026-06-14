@@ -83,7 +83,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
           <p>© {new Date().getFullYear()} Sibiso Marketing. All rights reserved.</p>
-          <p>Strategic growth systems for predictable revenue.</p>
+          <p>Powered by Gravitas</p>
         </div>
       </div>
     </footer>
