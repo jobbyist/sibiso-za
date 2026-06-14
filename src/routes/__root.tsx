@@ -83,14 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sibiso Marketing — Strategic Growth Systems" },
+      { title: "Turnkey Marketing & Business Growth Platform - Sibiso" },
       {
         name: "description",
         content:
           "We don't just market businesses. We build systems that drive growth — combining strategy, technology, automation and data intelligence into predictable revenue.",
       },
       { name: "author", content: "Sibiso Marketing" },
-      { property: "og:title", content: "Sibiso Marketing — Strategic Growth Systems" },
+      { property: "og:title", content: "Turnkey Marketing & Business Growth Platform - Sibiso" },
       {
         property: "og:description",
         content: "Strategic growth systems that attract, convert, and retain customers for measurable, sustainable growth.",
@@ -98,6 +98,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Sibiso Marketing" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Turnkey Marketing & Business Growth Platform - Sibiso" },
+      { name: "description", content: "Sibiso Marketing operates at the intersection of high-level business strategy and technical execution. We do not function as a traditional marketing agency..." },
+      { property: "og:description", content: "Sibiso Marketing operates at the intersection of high-level business strategy and technical execution. We do not function as a traditional marketing agency..." },
+      { name: "twitter:description", content: "Sibiso Marketing operates at the intersection of high-level business strategy and technical execution. We do not function as a traditional marketing agency..." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/676o3XGUnkNgBDw7vLNTBhgC4V13/social-images/social-1781451542368-sibisobannerog.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/676o3XGUnkNgBDw7vLNTBhgC4V13/social-images/social-1781451542368-sibisobannerog.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
