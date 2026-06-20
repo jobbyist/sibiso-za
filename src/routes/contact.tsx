@@ -52,7 +52,12 @@ function Contact() {
       return;
     }
     setErrors({});
-    toast.success("Thank you! We'll respond within one business day.");
+    const body = encodeURIComponent(
+      `Full Name: ${data.fullName}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone}\nIndustry: ${data.industry}\nBudget: ${data.budget}\n\nChallenges:\n${data.challenges}`,
+    );
+    const subject = encodeURIComponent(`New consultation request from ${data.fullName} (${data.company})`);
+    window.location.href = `mailto:hello@sibisomarketing.co.za?subject=${subject}&body=${body}`;
+    toast.success("Opening your email client — we'll respond within one business day.");
     e.currentTarget.reset();
   };
 
