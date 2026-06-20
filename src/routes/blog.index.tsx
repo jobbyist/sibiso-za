@@ -1,10 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, Clock } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { POSTS } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { openComingSoon } from "@/components/ComingSoonModal";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -51,10 +52,10 @@ function Blog() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.06}>
-              <Link
-                to="/blog/$slug"
-                params={{ slug: p.slug }}
-                className="group flex h-full flex-col rounded-3xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1.5 hover:shadow-card"
+              <button
+                type="button"
+                onClick={() => openComingSoon()}
+                className="group flex h-full w-full flex-col rounded-3xl border border-border bg-card p-7 text-left shadow-soft transition-all hover:-translate-y-1.5 hover:shadow-card"
               >
                 <div className="flex items-center gap-3 text-xs">
                   <span className="rounded-full bg-[var(--gold)]/15 px-3 py-1 font-semibold text-[var(--gold)]">{p.category}</span>
@@ -67,7 +68,7 @@ function Blog() {
                 <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[var(--gold)]">
                   Read article <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
-              </Link>
+              </button>
             </Reveal>
           ))}
         </div>
