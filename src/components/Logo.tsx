@@ -1,5 +1,8 @@
-import whiteLogo from "@/assets/sibiso-white.svg";
-import blackLogo from "@/assets/sibiso-black.svg";
+import whiteAsset from "@/assets/sibiso-white.svg.asset.json";
+import blackAsset from "@/assets/sibiso-black.svg.asset.json";
+
+const whiteLogo = whiteAsset.url;
+const blackLogo = blackAsset.url;
 
 export function Logo({ className = "", forceVariant }: { className?: string; forceVariant?: "light" | "dark" }) {
   if (forceVariant === "light") {

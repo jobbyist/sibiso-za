@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mic, ArrowUpRight, Mail } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
@@ -7,6 +7,7 @@ import { AudioPlayer } from "@/components/AudioPlayer";
 import { CTAButton } from "@/components/ui-kit";
 import { EPISODES } from "@/lib/content";
 import { toast } from "sonner";
+import { openComingSoon } from "@/components/ComingSoonModal";
 
 export const Route = createFileRoute("/podcast/")({
   head: () => ({
@@ -51,13 +52,13 @@ function Podcast() {
                   <span>{featured.duration}</span>
                 </div>
                 <AudioPlayer title={featured.title} />
-                <Link
-                  to="/podcast/$slug"
-                  params={{ slug: featured.slug }}
+                <button
+                  type="button"
+                  onClick={() => openComingSoon()}
                   className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--gold)]"
                 >
                   Read summary & transcript <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -77,13 +78,13 @@ function Podcast() {
                 <div className="mt-4">
                   <AudioPlayer title={ep.title} />
                 </div>
-                <Link
-                  to="/podcast/$slug"
-                  params={{ slug: ep.slug }}
+                <button
+                  type="button"
+                  onClick={() => openComingSoon()}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--gold)]"
                 >
                   Summary & transcript <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                </button>
               </div>
             </Reveal>
           ))}

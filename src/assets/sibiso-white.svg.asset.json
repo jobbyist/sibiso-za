@@ -1,11 +1,11 @@
 {
-  "asset_id": "b718c1be-246b-4a52-951a-fd447e70fbe7",
-  "content_type": "image/svg+xml",
-  "created_at": "2026-06-14T08:55:29Z",
-  "original_filename": "sibiso-white.svg",
+  "version": 1,
+  "asset_id": "baf5a8c3-5d3b-46c2-a11f-ea1d0617d704",
   "project_id": "b666431e-e3f4-4748-937d-4618638d6116",
-  "r2_key": "a/v1/b666431e-e3f4-4748-937d-4618638d6116/b718c1be-246b-4a52-951a-fd447e70fbe7/sibiso-white.svg",
-  "size": 29595,
-  "url": "/__l5e/assets-v1/b718c1be-246b-4a52-951a-fd447e70fbe7/sibiso-white.svg",
-  "version": 1
+  "url": "/__l5e/assets-v1/baf5a8c3-5d3b-46c2-a11f-ea1d0617d704/sibiso-white.svg",
+  "r2_key": "a/v1/b666431e-e3f4-4748-937d-4618638d6116/baf5a8c3-5d3b-46c2-a11f-ea1d0617d704/sibiso-white.svg",
+  "original_filename": "sibiso-white.svg",
+  "size": 739321,
+  "content_type": "image/svg+xml",
+  "created_at": "2026-06-20T22:01:18Z"
 }

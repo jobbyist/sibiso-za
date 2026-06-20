@@ -35,7 +35,7 @@ function AccessibilityPage() {
       <p>Some embedded third-party content (analytics widgets, social embeds) may not fully meet our accessibility standards. We're working with our providers to improve this.</p>
 
       <h2>4. Feedback</h2>
-      <p>If you encounter an accessibility barrier on our site, please email <a href="mailto:hello@sibiso.co">hello@sibiso.co</a> with the page URL and a description. We aim to respond within 5 business days.</p>
+      <p>If you encounter an accessibility barrier on our site, please email <a href="mailto:hello@sibisomarketing.co.za">hello@sibisomarketing.co.za</a> with the page URL and a description. We aim to respond within 5 business days.</p>
     </LegalPage>
   );
 }

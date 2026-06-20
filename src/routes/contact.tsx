@@ -52,7 +52,12 @@ function Contact() {
       return;
     }
     setErrors({});
-    toast.success("Thank you! We'll respond within one business day.");
+    const body = encodeURIComponent(
+      `Full Name: ${data.fullName}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone}\nIndustry: ${data.industry}\nBudget: ${data.budget}\n\nChallenges:\n${data.challenges}`,
+    );
+    const subject = encodeURIComponent(`New consultation request from ${data.fullName} (${data.company})`);
+    window.location.href = `mailto:hello@sibisomarketing.co.za?subject=${subject}&body=${body}`;
+    toast.success("Opening your email client — we'll respond within one business day.");
     e.currentTarget.reset();
   };
 
@@ -112,8 +117,8 @@ function Contact() {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-5">
               {[
-                { icon: Mail, label: "Email", value: "hello@sibiso.co", href: "mailto:hello@sibiso.co" },
-                { icon: Phone, label: "Phone", value: "+27 00 000 0000", href: "tel:+27000000000" },
+                { icon: Mail, label: "Email", value: "hello@sibisomarketing.co.za", href: "mailto:hello@sibisomarketing.co.za" },
+                { icon: Phone, label: "Phone", value: "+27 75 381 3495", href: "tel:+27753813495" },
                 { icon: MapPin, label: "Office", value: "Johannesburg, South Africa" },
                 { icon: Clock, label: "Response Time", value: "Within 1 business day" },
               ].map((c) => (
@@ -133,7 +138,7 @@ function Contact() {
               ))}
 
               <a
-                href={`https://wa.me/27000000000?text=${waMessage}`}
+                href={`https://wa.me/+27753813495?text=${waMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-3xl bg-[#25D366] px-5 py-4 font-subheading font-semibold text-white shadow-soft transition-transform hover:-translate-y-0.5"

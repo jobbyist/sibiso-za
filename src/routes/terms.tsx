@@ -42,7 +42,7 @@ function TermsPage() {
       <p>These terms are governed by the laws of the Republic of South Africa. Any disputes will be subject to the exclusive jurisdiction of the courts of Johannesburg.</p>
 
       <h2>9. Contact</h2>
-      <p>For questions about these terms, contact us at <a href="mailto:hello@sibiso.co">hello@sibiso.co</a>.</p>
+      <p>For questions about these terms, contact us at <a href="mailto:hello@sibisomarketing.co.za">hello@sibisomarketing.co.za</a>.</p>
     </LegalPage>
   );
 }
