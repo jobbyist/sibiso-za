@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { label: "Home", to: "/" },
-  { label: "Solutions", to: "/solutions" },
   { label: "About", to: "/about" },
   { label: "Process", to: "/process" },
-  { label: "Case Studies", to: "/case-studies" },
-  { label: "Blog", to: "/blog" },
+  { label: "Solutions", to: "/solutions" },
+  { label: "Clients", to: "/case-studies" },
+  { label: "Newsroom", to: "/blog" },
   { label: "Podcast", to: "/podcast" },
   { label: "Contact", to: "/contact" },
 ];
