@@ -112,8 +112,8 @@ function Contact() {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-5">
               {[
-                { icon: Mail, label: "Email", value: "hello@sibiso.co", href: "mailto:hello@sibiso.co" },
-                { icon: Phone, label: "Phone", value: "+27 00 000 0000", href: "tel:+27000000000" },
+                { icon: Mail, label: "Email", value: "hello@sibisomarketing.co.za", href: "mailto:hello@sibisomarketing.co.za" },
+                { icon: Phone, label: "Phone", value: "+27 75 381 3495", href: "tel:+27753813495" },
                 { icon: MapPin, label: "Office", value: "Johannesburg, South Africa" },
                 { icon: Clock, label: "Response Time", value: "Within 1 business day" },
               ].map((c) => (
@@ -133,7 +133,7 @@ function Contact() {
               ))}
 
               <a
-                href={`https://wa.me/27000000000?text=${waMessage}`}
+                href={`https://wa.me/+27753813495?text=${waMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-3xl bg-[#25D366] px-5 py-4 font-subheading font-semibold text-white shadow-soft transition-transform hover:-translate-y-0.5"

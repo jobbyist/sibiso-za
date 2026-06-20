@@ -66,11 +66,11 @@ export function Footer() {
             <h4 className="font-subheading text-sm font-semibold uppercase tracking-widest text-muted-foreground">
               Get in touch
             </h4>
-            <a href="mailto:hello@sibiso.co" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-[var(--gold)]">
-              <Mail className="h-4 w-4 text-[var(--gold)]" /> hello@sibiso.co
+            <a href="mailto:hello@sibisomarketing.co.za" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-[var(--gold)]">
+              <Mail className="h-4 w-4 text-[var(--gold)]" /> hello@sibisomarketing.co.za
             </a>
-            <a href="tel:+27000000000" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-[var(--gold)]">
-              <Phone className="h-4 w-4 text-[var(--gold)]" /> +27 00 000 0000
+            <a href="tel:+27753813495" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-[var(--gold)]">
+              <Phone className="h-4 w-4 text-[var(--gold)]" /> +27 75 381 3495
             </a>
             <span className="flex items-center gap-2 text-sm text-foreground/80">
               <MapPin className="h-4 w-4 text-[var(--gold)]" /> Johannesburg, South Africa

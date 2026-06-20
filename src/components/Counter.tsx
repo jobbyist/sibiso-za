@@ -16,11 +16,12 @@ export function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!inView) return;
     let raf = 0;
+    setValue(0);
     const start = performance.now();
     const step = (now: number) => {
       const p = Math.min(1, (now - start) / duration);
