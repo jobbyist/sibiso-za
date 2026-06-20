@@ -18,6 +18,7 @@ import { Footer } from "../components/Footer";
 import { Preloader } from "../components/Preloader";
 import { Chatbot } from "../components/Chatbot";
 import { Toaster } from "../components/ui/sonner";
+import { ComingSoonModal } from "../components/ComingSoonModal";
 
 function NotFoundComponent() {
   return (
@@ -163,6 +164,7 @@ function RootComponent() {
         <Footer />
         <Chatbot />
         <Toaster />
+        <ComingSoonModal />
         <Analytics />
       </ThemeProvider>
     </QueryClientProvider>
