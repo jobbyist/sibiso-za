@@ -19,7 +19,7 @@ const cols = [
       { label: "Solutions", to: "/solutions" },
       { label: "Blog", to: "/blog" },
       { label: "Podcast", to: "/podcast" },
-      { label: "Book Audit", to: "/contact" },
+      { label: "Book Audit", to: "/bookings" },
     ],
   },
 ];
@@ -75,7 +75,7 @@ export function Footer() {
             <span className="flex items-center gap-2 text-sm text-foreground/80">
               <MapPin className="h-4 w-4 text-[var(--gold)]" /> Johannesburg, South Africa
             </span>
-            <CTAButton to="/contact" variant="gold" className="mt-2">
+            <CTAButton to="/bookings" variant="gold" className="mt-2">
               Book Free Growth Audit <ArrowUpRight className="h-4 w-4" />
             </CTAButton>
           </div>

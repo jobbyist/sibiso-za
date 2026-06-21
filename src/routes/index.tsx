@@ -90,10 +90,10 @@ function Home() {
               customers — helping businesses achieve measurable and sustainable growth.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <CTAButton to="/contact" variant="primary">
+              <CTAButton to="/bookings" variant="primary">
                 Book A Free Business Audit <ArrowUpRight className="h-4 w-4" />
               </CTAButton>
-              <CTAButton to="/contact" variant="outline" className="border-white/25 text-white hover:bg-white/10">
+              <CTAButton to="/bookings" variant="outline" className="border-white/25 text-white hover:bg-white/10">
                 Speak To A Growth Consultant
               </CTAButton>
             </div>
@@ -290,7 +290,7 @@ export function FinalCTA() {
               Ready To Unlock Your Growth Potential?
             </h2>
             <p className="text-white/85 sm:text-lg">Book a complimentary business growth audit today.</p>
-            <CTAButton to="/contact" variant="gold" className="mt-2">
+            <CTAButton to="/bookings" variant="gold" className="mt-2">
               Book A Free Business Audit <ArrowUpRight className="h-4 w-4" />
             </CTAButton>
           </div>

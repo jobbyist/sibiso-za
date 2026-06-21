@@ -62,6 +62,44 @@ export type Database = {
         }
         Relationships: []
       }
+      consultations: {
+        Row: {
+          contact_preference: string | null
+          created_at: string
+          id: string
+          lead_id: string
+          notes: string | null
+          preferred_date: string | null
+          preferred_time: string | null
+        }
+        Insert: {
+          contact_preference?: string | null
+          created_at?: string
+          id?: string
+          lead_id: string
+          notes?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+        }
+        Update: {
+          contact_preference?: string | null
+          created_at?: string
+          id?: string
+          lead_id?: string
+          notes?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultations_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       documents: {
         Row: {
           created_at: string
@@ -89,6 +127,105 @@ export type Database = {
           title?: string
           uploaded_by?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          audit_website_url: string | null
+          business_type: string | null
+          company: string | null
+          created_at: string
+          device_type: string | null
+          email: string
+          first_name: string
+          has_existing_website: boolean | null
+          id: string
+          job_title: string | null
+          landing_page: string | null
+          last_name: string
+          monthly_budget: string | null
+          phone: string
+          primary_objective: string | null
+          project_type: string | null
+          referrer: string | null
+          selected_services: Json
+          status: string
+          team_size: string | null
+          timeline: string | null
+          updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+          wants_quote: boolean | null
+          website_url: string | null
+        }
+        Insert: {
+          audit_website_url?: string | null
+          business_type?: string | null
+          company?: string | null
+          created_at?: string
+          device_type?: string | null
+          email: string
+          first_name: string
+          has_existing_website?: boolean | null
+          id?: string
+          job_title?: string | null
+          landing_page?: string | null
+          last_name: string
+          monthly_budget?: string | null
+          phone: string
+          primary_objective?: string | null
+          project_type?: string | null
+          referrer?: string | null
+          selected_services?: Json
+          status?: string
+          team_size?: string | null
+          timeline?: string | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          wants_quote?: boolean | null
+          website_url?: string | null
+        }
+        Update: {
+          audit_website_url?: string | null
+          business_type?: string | null
+          company?: string | null
+          created_at?: string
+          device_type?: string | null
+          email?: string
+          first_name?: string
+          has_existing_website?: boolean | null
+          id?: string
+          job_title?: string | null
+          landing_page?: string | null
+          last_name?: string
+          monthly_budget?: string | null
+          phone?: string
+          primary_objective?: string | null
+          project_type?: string | null
+          referrer?: string | null
+          selected_services?: Json
+          status?: string
+          team_size?: string | null
+          timeline?: string | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          wants_quote?: boolean | null
+          website_url?: string | null
         }
         Relationships: []
       }
@@ -230,6 +367,44 @@ export type Database = {
         }
         Relationships: []
       }
+      quote_estimates: {
+        Row: {
+          created_at: string
+          growth_zar: number | null
+          id: string
+          lead_id: string
+          line_items: Json
+          recommended_zar: number | null
+          starter_zar: number | null
+        }
+        Insert: {
+          created_at?: string
+          growth_zar?: number | null
+          id?: string
+          lead_id: string
+          line_items?: Json
+          recommended_zar?: number | null
+          starter_zar?: number | null
+        }
+        Update: {
+          created_at?: string
+          growth_zar?: number | null
+          id?: string
+          lead_id?: string
+          line_items?: Json
+          recommended_zar?: number | null
+          starter_zar?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_estimates_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       referrals: {
         Row: {
           created_at: string
@@ -348,6 +523,47 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      website_audits: {
+        Row: {
+          created_at: string
+          id: string
+          lead_id: string
+          results: Json | null
+          score: number | null
+          status: string
+          summary: string | null
+          website_url: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          lead_id: string
+          results?: Json | null
+          score?: number | null
+          status?: string
+          summary?: string | null
+          website_url: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          lead_id?: string
+          results?: Json | null
+          score?: number | null
+          status?: string
+          summary?: string | null
+          website_url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "website_audits_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
