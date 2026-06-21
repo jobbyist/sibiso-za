@@ -96,7 +96,7 @@ function Solutions() {
                   <span className="font-semibold">Outcome:</span> {p.outcome}
                 </div>
                 <CTAButton
-                  to="/contact"
+                  to="/bookings"
                   variant={p.featured ? "gold" : "primary"}
                   className="mt-6 w-full"
                 >
